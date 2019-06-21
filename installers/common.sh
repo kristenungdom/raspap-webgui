@@ -86,14 +86,6 @@ function install_dependencies() {
     install_error "No function definition for install_dependencies"
 }
 
-# Enables PHP for lighttpd and restarts service for settings to take effect
-function enable_php_lighttpd() {
-    install_log "Enabling PHP for lighttpd"
-
-    sudo lighttpd-enable-mod fastcgi-php    
-    sudo service lighttpd force-reload
-    sudo /etc/init.d/lighttpd restart || install_error "Unable to restart lighttpd"
-}
 
 # Verifies existence and permissions of RaspAP directory
 function create_raspap_directories() {
