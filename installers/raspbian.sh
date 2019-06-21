@@ -1,4 +1,4 @@
-UPDATE_URL="https://raw.githubusercontent.com/billz/raspap-webgui/master/"
+UPDATE_URL="https://raw.githubusercontent.com/kristenungdom/raspap-webgui/rpi-branch/"
 wget -q ${UPDATE_URL}/installers/common.sh -O /tmp/raspapcommon.sh
 source /tmp/raspapcommon.sh && rm -f /tmp/raspapcommon.sh
 
@@ -9,7 +9,7 @@ function update_system_packages() {
 
 function install_dependencies() {
     install_log "Installing required packages"
-    sudo apt-get install lighttpd $php_package git hostapd dnsmasq vnstat || install_error "Unable to install dependencies"
+    sudo apt-get install $php_package git hostapd dnsmasq vnstat || install_error "Unable to install dependencies"
 }
 
 install_raspap
